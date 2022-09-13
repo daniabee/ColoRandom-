@@ -69,6 +69,7 @@ text-shadow: 5px 5px 5px black;
   height: 30px;
   margin: 5px;
   cursor: pointer;
+  border: none;
   /* content: url(./imgs_folder/lock_for_project.png/); */
 }
 
