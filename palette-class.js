@@ -1,31 +1,32 @@
-Class Palette {
-  constructor(colors) {
+class Palette {
+  constructor() {
     this.colors = [];
     this.id = Date.now();
-    this.locked = colors.locked;
+    // this.locked = colors.locked;
 
   }
 
   replaceColor(color) {
-    console.log('WHATS UP?!!?')
-    var prepColors = document.querySelectorAll('.unlocked');
-    for (var i = 0; i < prepColor.length; i++) {
+    var unlockedColors = document.querySelectorAll('.unlocked');
+    var lockedColors = document.querySelectorAll('.locked');
+    for (var i = 0; i < unlockedColors.length; i++) {
       var newColor = new Color();
-        prepColors[i].style.backgroundColor = newColor.hex
+        unlockedColors[i].style.backgroundColor = `#${newColor.hex}`
+        this.colors.push(newColor);
     }
   }
 
-  lockColor() {
-    if (!this.locked) {
-      this.locked = true;
-    }
-    //only replaces unlocked colors
-  }
-
-  unlockedColor() {
-    if(this.locked) {
-      this.locked = false;
-      }
-    }
-
+//   lockColor() {
+//     if (!this.locked) {
+//       this.locked = true;
+//     }
+//     //only replaces unlocked colors
+//   }
+//
+//   unlockColor() {
+//     if(this.locked) {
+//       this.locked = false;
+//       }
+//     }
+//
 }
