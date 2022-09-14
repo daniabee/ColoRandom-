@@ -1,11 +1,18 @@
 Class Palette {
-  constructor(id) {
-    this.colors: [];
-    this.id: id;
+  constructor(colors) {
+    this.colors = [];
+    this.id = Date.now();
+    this.locked = colors.locked;
+
   }
 
-  replaceColor() {
-
+  replaceColor(color) {
+    console.log('WHATS UP?!!?')
+    var prepColors = document.querySelectorAll('.unlocked');
+    for (var i = 0; i < prepColor.length; i++) {
+      var newColor = new Color();
+        prepColors[i].style.backgroundColor = newColor.hex
+    }
   }
 
   lockColor() {
@@ -14,4 +21,11 @@ Class Palette {
     }
     //only replaces unlocked colors
   }
+
+  unlockedColor() {
+    if(this.locked) {
+      this.locked = false;
+      }
+    }
+
 }
