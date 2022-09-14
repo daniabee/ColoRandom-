@@ -2,7 +2,6 @@ class Palette {
   constructor() {
     this.colors = [];
     this.id = Date.now();
-    // this.locked = colors.locked;
 
   }
 
@@ -16,17 +15,11 @@ class Palette {
     }
   }
 
-//   lockColor() {
-//     if (!this.locked) {
-//       this.locked = true;
-//     }
-//     //only replaces unlocked colors
-//   }
-//
-//   unlockColor() {
-//     if(this.locked) {
-//       this.locked = false;
-//       }
-//     }
-//
+  lockColor(selectedColor) {
+    this.colors[selectedColor].locked = true;
+  }
+
+  unlockColor(selectedColor) {
+    this.colors[selectedColor].locked = false;
+  }
 }
