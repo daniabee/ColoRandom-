@@ -139,10 +139,13 @@ overflow-x: hidden;
 }
 
 .mini_palette {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
   height: 50%;
-  width: 15%;
-  border: 2px solid black;
+  width: 100%;
   border-radius: 2px;
+  }
 }
 
 .mini_trashCan {
