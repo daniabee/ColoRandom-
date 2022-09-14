@@ -6,6 +6,7 @@ class Palette {
   }
 
   replaceColor(color) {
+    this.colors.length = 0;
     var unlockedColors = document.querySelectorAll('.unlocked');
     var lockedColors = document.querySelectorAll('.locked');
     for (var i = 0; i < unlockedColors.length; i++) {
