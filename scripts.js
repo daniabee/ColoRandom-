@@ -6,10 +6,8 @@ var currentPaletteMini = document.querySelector('.mini');
 var mainPalette = new Palette();
 var savedPalettes = [];
 
-
 window.addEventListener('load', generateNewPalette);
 newPaletteButton.addEventListener('click', generateNewPalette);
-
 saveButton.addEventListener('click', savePalette);
 
 function generateNewPalette() {
@@ -17,38 +15,21 @@ function generateNewPalette() {
 }
 
 function savePalette() {
-    // ${savedPalettes[0].colors[0].hex}
-    //for loop that puts in index from datamodel
-    var saveThisPalette = new Palette(mainPalette.colors);
-    savedPalettes.push(saveThisPalette);
-    miniSavedPalettes.innerHTML += `
 
-    <section class="mini_palette unlocked">
+  var saveThisPalette = new Palette(mainPalette.colors);
+  savedPalettes.push(saveThisPalette);
+
+  miniSavedPalettes.innerHTML = '';
+
+  for (var i = 0; i < savedPalettes.length; i++){
+    for (var j = 0; j < savedPalettes[i].colors.length; j++) {
+
+      savedPalettes[i].lockColor(j);
+
+      miniSavedPalettes.innerHTML +=  `
         <section class="palettes_color" data-index="0">
-          <section class="palettes_current mini locked" style="background-color:#${mainPalette.colors[0].hex}";></section>
-          <section class="palettes_hex-key" data-index="0">
-          </section>
-        </section>
-          <section class="palettes_color" data-index="1">
-          <section class="palettes_current mini locked" style="background-color:#${mainPalette.colors[1].hex}";></section>
-          <section class="palettes_hex-key" data-index="1">
-        </section>
-        </section>
-        <section class="palettes_color" data-index="2">
-          <section class="palettes_current mini locked" style="background-color:#${mainPalette.colors[2].hex}";></section>
-          <section class="palettes_hex-key" data-index="2">
-          </section>
-        </section>
-          <section class="palettes_color" data-index="3">
-          <section class="palettes_current mini locked" style="background-color:#${mainPalette.colors[3].hex}";></section>
-          <section class="palettes_hex-key" data-index="3">
-        </section>
-        </section>
-          <section class="palettes_color" data-index="4">
-          <section class="palettes_current mini locked" style="background-color:#${mainPalette.colors[4].hex}";></section>
-          <section class="palettes_hex-key" data-index="4">
-          </section>
-        </section>
-    </section>
-    `
+        <section class="palettes_current mini locked" style="background-color:#${savedPalettes[i].colors[j].hex}";></section>
+      `
+    }
+  }
 }
