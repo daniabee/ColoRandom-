@@ -17,7 +17,8 @@ function generateNewPalette() {
 }
 
 function savePalette() {
-    // savedPalettes.length = 0;
+    // ${savedPalettes[0].colors[0].hex}
+    //for loop that puts in index from datamodel
     var saveThisPalette = new Palette(mainPalette.colors);
     savedPalettes.push(saveThisPalette);
     miniSavedPalettes.innerHTML += `
