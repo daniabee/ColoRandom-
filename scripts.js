@@ -36,3 +36,9 @@ function savePalette() {
   }
   mainPalette.replaceColor();
 }
+
+function lockPalette() {
+  if (event.target.classList.contains('.unlocked')) {
+    event.target
+  }
+}

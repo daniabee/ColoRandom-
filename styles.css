@@ -62,23 +62,14 @@ text-shadow: 5px 5px 5px black;
   font-size: 20pt;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
 }
 
 .mini_trashCan,
-.lock {
+.closed-lock, .open-lock {
   width: 30px;
   height: 30px;
   margin: 5px;
-  cursor: pointer;
   border: none;
-}
-
-.unlock {
-  width: 30px;
-  height: 30px;
-  margin: 5px;
-  cursor: pointer;
 }
 
 .sidebar {
@@ -153,6 +144,10 @@ overflow-x: hidden;
 
 }
 
+.mini {
+  cursor: default;
+}
+
 .mini_trashCan {
   width: 40px;
   height: 30px;
@@ -160,6 +155,7 @@ overflow-x: hidden;
   cursor: pointer;
   border: none;
   white-space: nowrap;
+  cursor: pointer;
 }
 
 .hidden {
