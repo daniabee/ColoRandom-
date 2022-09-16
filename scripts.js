@@ -27,10 +27,12 @@ function savePalette() {
       savedPalettes[i].lockColor(j);
 
       miniSavedPalettes.innerHTML +=  `
-        <section class="palettes_color" data-index="0">
-        <section class="palettes_current mini locked" style="background-color:#${savedPalettes[i].colors[j].hex}";></section>
+        <section class="palettes_color_mini" data-index="0">
+          <section class="palettes_current mini locked" style="background-color:#${savedPalettes[i].colors[j].hex}";></section>
+        </section>
       `
     }
       miniSavedPalettes.innerHTML += `<img class= "mini_trashCan" src="./imgFolder/trash-can.png" alt="trash can icon">`
   }
+  mainPalette.replaceColor();
 }

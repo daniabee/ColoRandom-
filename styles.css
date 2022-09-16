@@ -35,8 +35,9 @@ text-shadow: 5px 5px 5px black;
   height: 35%;
 }
 
-.palettes_color {
+.palettes_color, .palettes_color_mini{
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   flex-direction: column;
   justify-content: space-around;
@@ -138,6 +139,10 @@ overflow-x: hidden;
    min-height: 10%;
 }
 
+.palettes_color_mini {
+  white-space: nowrap;
+}
+
 .mini_palette {
   display: flex;
   justify-content: space-between;
@@ -154,6 +159,7 @@ overflow-x: hidden;
   margin-top: 33px;
   cursor: pointer;
   border: none;
+  white-space: nowrap;
 }
 
 .hidden {
