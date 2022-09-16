@@ -31,5 +31,6 @@ function savePalette() {
         <section class="palettes_current mini locked" style="background-color:#${savedPalettes[i].colors[j].hex}";></section>
       `
     }
+      miniSavedPalettes.innerHTML += `<img class= "mini_trashCan" src="./imgFolder/trash-can.png" alt="trash can icon">`
   }
 }
