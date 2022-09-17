@@ -42,22 +42,29 @@ function savePalette() {
   var saveThisPalette = new Palette(mainPalette.colors);
   savedPalettes.push(saveThisPalette);
   miniSavedPalettes.innerHTML = '';
-  var savedColorArea = document.createElement("section");
-  savedColorArea.classList.add("colorArena");
-  miniSavedPalettes.appendChild(savedColorArea);
+  // var savedColorArea = document.createElement("section");
+  // savedColorArea.classList.add("colorArena");
+  // miniSavedPalettes.appendChild(savedColorArea);
 
   for (var i = 0; i < savedPalettes.length; i++){
-     for (var j = 0; j < savedPalettes[i].colors.length; j++) {
+    var pallet = '';
+      for (var j = 0; j < savedPalettes[i].colors.length; j++) {
 
-      savedPalettes[i].lockColor(j);
-
-    savedColorArea.innerHTML +=  `
-        <section class="palettes_color_mini" data-index="0">
-        <section class="palettes_current mini locked" style="background-color:#${savedPalettes[i].colors[j].hex}";></section>
-     </section>
-     `
-   }
-      savedColorArea.innerHTML += `<img class= "mini_trashCan" src="./imgFolder/trash-can.png" alt="trash can icon">`
+        savedPalettes[i].lockColor(j);
+// savedColorArea
+        pallet +=  `
+          <section class="palettes_color_mini" data-index="0">
+            <section class="palettes_current mini locked" style="background-color:#${savedPalettes[i].colors[j].hex}";></section>
+          </section>
+        `
+      }
+      miniSavedPalettes.innerHTML += `
+        <section class="saved-palette-container">
+          ${pallet}
+          <img class= "mini_trashCan" src="./imgFolder/trash-can.png" alt="trash can icon">
+        </section>
+      `
+      // savedColorArea.innerHTML += `<img class= "mini_trashCan" src="./imgFolder/trash-can.png" alt="trash can icon">`
  }
   mainPalette.replaceColor();
 };
