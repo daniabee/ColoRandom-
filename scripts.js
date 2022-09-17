@@ -48,6 +48,7 @@ function savePalette() {
   savedPalettes.push(saveThisPalette);
 
   displayPalette();
+  generateNewPalette();
 }
 
 function displayPalette() {
@@ -73,7 +74,7 @@ function displayPalette() {
       </section>
     `
   }
-  mainPalette.replaceColor();
+
 };
 
 
@@ -158,11 +159,14 @@ function makeLocked(elementLock) {
   elementLock.classList.remove('unlocked');
   elementLock.classList.add('locked');
 }
+
 function removeColorRow(event) {
    console.log(event)
-   // if(event.target.classList.contains('mini_trashCan')) {
-   //   for( var i = 0; i < savedPalettes.length; i++) {
-   //     if(`key=${savedPalettes[i].id}` === event.target.attributes.key)
-   //   }
-   // }
+   if(event.target.classList.contains('mini_trashCan')) {
+     for(var i = 0; i < savedPalettes.length; i++) {
+       if(savedPalettes[i].id === Number(event.target.id)) {
+         savedPalettes.splice([i], 1);
+       }
+     }
+   } displayPalette();
 }
