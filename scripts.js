@@ -41,9 +41,13 @@ function generateNewPalette() {
 function savePalette() {
   var saveThisPalette = new Palette(mainPalette.colors);
   savedPalettes.push(saveThisPalette);
-  // create a function seperating data model from dom below 
-  miniSavedPalettes.innerHTML = '';
 
+  displayPalette();
+}
+
+function displayPalette() {
+  // create a function seperating data model from dom below
+  miniSavedPalettes.innerHTML = '';
 
   for (var i = 0; i < savedPalettes.length; i++){
     var pallet = '';
@@ -64,6 +68,9 @@ function savePalette() {
       </section>
     `
   }
+  mainPalette.replaceColor();
+};
+
 
   //add a value/key to trash can img
   // being created as part of original for loop 47
@@ -75,8 +82,7 @@ function savePalette() {
   // function renders// the dom with a function
   //does event.target.contains(mini_trashCan
   // queryselector (console.log() frequently)
-  mainPalette.replaceColor();
-};
+
 
 function lockColor1() {
   if (!mainPalette.colors[0].locked) {
