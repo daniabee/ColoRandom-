@@ -121,6 +121,7 @@ overflow-x: hidden;
    color: #97d4ff;
    text-shadow: 2px 3px 5px black;
  }
+ 
  .sidebar_new-instance {
    display: flex;
    justify-content: space-around;
@@ -154,15 +155,9 @@ overflow-x: hidden;
   white-space: nowrap;
   cursor: pointer;
 }
-.colorArena{
-  display: flex;
-  flex-direction: column;
-  border: 2px solid black;
-}
+
 .saved-palette-container {
   display: flex;
-
-
 }
 
 .hidden {
