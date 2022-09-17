@@ -1,6 +1,6 @@
 var newPaletteButton = document.querySelector('.buttons_new-palette')
 var saveButton = document.querySelector('.buttons_save-palette');
-var miniSavedPalettes = document.querySelector('.mini_palette');
+var miniSavedPalettes = document.querySelector('.mini_palettes_container');
 var currentPaletteMini = document.querySelector('.mini');
 var colorBlocks = document.querySelectorAll('.palettes_current');
 var openLocks = document.querySelectorAll('.open-lock');
@@ -39,27 +39,28 @@ function generateNewPalette() {
 }
 
 function savePalette() {
-
   var saveThisPalette = new Palette(mainPalette.colors);
   savedPalettes.push(saveThisPalette);
-
   miniSavedPalettes.innerHTML = '';
+  var savedColorArea = document.createElement("section");
+  savedColorArea.classList.add("colorArena");
+  miniSavedPalettes.appendChild(savedColorArea);
 
   for (var i = 0; i < savedPalettes.length; i++){
-    for (var j = 0; j < savedPalettes[i].colors.length; j++) {
+     for (var j = 0; j < savedPalettes[i].colors.length; j++) {
 
       savedPalettes[i].lockColor(j);
 
-      miniSavedPalettes.innerHTML +=  `
+    savedColorArea.innerHTML +=  `
         <section class="palettes_color_mini" data-index="0">
-          <section class="palettes_current mini locked" style="background-color:#${savedPalettes[i].colors[j].hex}";></section>
-        </section>
-      `
-    }
-      miniSavedPalettes.innerHTML += `<img class= "mini_trashCan" src="./imgFolder/trash-can.png" alt="trash can icon">`
-  }
+        <section class="palettes_current mini locked" style="background-color:#${savedPalettes[i].colors[j].hex}";></section>
+     </section>
+     `
+   }
+      savedColorArea.innerHTML += `<img class= "mini_trashCan" src="./imgFolder/trash-can.png" alt="trash can icon">`
+ }
   mainPalette.replaceColor();
-}
+};
 
 function lockColor1() {
   if (!mainPalette.colors[0].locked) {

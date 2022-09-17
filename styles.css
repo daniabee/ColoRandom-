@@ -134,13 +134,14 @@ overflow-x: hidden;
   white-space: nowrap;
 }
 
-.mini_palette {
+.mini_palettes_container {
   display: flex;
-  justify-content: space-between;
-  flex-flow: row wrap;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  /* flex-flow: row wrap; */
   height: 100px;
   width: 100%;
-  border-radius: 2px;
+  /* border-radius: 2px; */
 
 }
 
@@ -156,6 +157,11 @@ overflow-x: hidden;
   border: none;
   white-space: nowrap;
   cursor: pointer;
+}
+.colorArena{
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
 }
 
 .hidden {
