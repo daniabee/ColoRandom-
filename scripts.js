@@ -80,6 +80,7 @@ function lockColor2() {
     makeLocked(secondColor);
     mainPalette.lockColor(1)
   }
+  generateNewPalette();
 }
 
 function lockColor3() {
