@@ -121,6 +121,7 @@ overflow-x: hidden;
    color: #97d4ff;
    text-shadow: 2px 3px 5px black;
  }
+ 
  .sidebar_new-instance {
    display: flex;
    justify-content: space-around;
@@ -134,14 +135,11 @@ overflow-x: hidden;
   white-space: nowrap;
 }
 
-.mini_palette {
+.mini_palettes_container {
   display: flex;
-  justify-content: space-between;
-  flex-flow: row wrap;
+  flex-direction: column;
   height: 100px;
   width: 100%;
-  border-radius: 2px;
-
 }
 
 .mini {
@@ -156,6 +154,10 @@ overflow-x: hidden;
   border: none;
   white-space: nowrap;
   cursor: pointer;
+}
+
+.saved-palette-container {
+  display: flex;
 }
 
 .hidden {

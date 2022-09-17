@@ -1,6 +1,6 @@
 var newPaletteButton = document.querySelector('.buttons_new-palette')
 var saveButton = document.querySelector('.buttons_save-palette');
-var miniSavedPalettes = document.querySelector('.mini_palette');
+var miniSavedPalettes = document.querySelector('.mini_palettes_container');
 var currentPaletteMini = document.querySelector('.mini');
 var colorBlocks = document.querySelectorAll('.palettes_current');
 var openLocks = document.querySelectorAll('.open-lock');
@@ -39,27 +39,44 @@ function generateNewPalette() {
 }
 
 function savePalette() {
-
   var saveThisPalette = new Palette(mainPalette.colors);
   savedPalettes.push(saveThisPalette);
-
+  // create a function seperating data model from dom below 
   miniSavedPalettes.innerHTML = '';
 
+
   for (var i = 0; i < savedPalettes.length; i++){
+    var pallet = '';
     for (var j = 0; j < savedPalettes[i].colors.length; j++) {
 
       savedPalettes[i].lockColor(j);
 
-      miniSavedPalettes.innerHTML +=  `
+      pallet +=  `
         <section class="palettes_color_mini" data-index="0">
           <section class="palettes_current mini locked" style="background-color:#${savedPalettes[i].colors[j].hex}";></section>
         </section>
       `
     }
-      miniSavedPalettes.innerHTML += `<img class= "mini_trashCan" src="./imgFolder/trash-can.png" alt="trash can icon">`
+    miniSavedPalettes.innerHTML += `
+      <section class="saved-palette-container">
+        ${pallet}
+        <img class= "mini_trashCan" src="./imgFolder/trash-can.png" alt="trash can icon" key=${savedPalettes[i].id}>
+      </section>
+    `
   }
+
+  //add a value/key to trash can img
+  // being created as part of original for loop 47
+  // savepalet.i.// ID
+  // put eventlisterner on big container
+  // target (function )( function (event))
+  //function will hit if( event.target.value.classList.
+  // does even.t.target.key === date.object // instanceof// update data model (remove from array )// maybe splice method...
+  // function renders// the dom with a function
+  //does event.target.contains(mini_trashCan
+  // queryselector (console.log() frequently)
   mainPalette.replaceColor();
-}
+};
 
 function lockColor1() {
   if (!mainPalette.colors[0].locked) {
