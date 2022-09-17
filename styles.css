@@ -35,8 +35,9 @@ text-shadow: 5px 5px 5px black;
   height: 35%;
 }
 
-.palettes_color {
+.palettes_color, .palettes_color_mini{
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   flex-direction: column;
   justify-content: space-around;
@@ -61,33 +62,24 @@ text-shadow: 5px 5px 5px black;
   font-size: 20pt;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
 }
 
-.lock {
+.mini_trashCan,
+.closed-lock, .open-lock {
   width: 30px;
   height: 30px;
   margin: 5px;
-  cursor: pointer;
   border: none;
-  /* content: url(./imgs_folder/lock_for_project.png/); */
-}
-
-.unlock {
-  /* content: url(./img_folder/unlock_for_project.png/); */
-  width: 30px;
-  height: 30px;
-  margin: 5px;
-  cursor: pointer;
 }
 
 .sidebar {
 display: flex;
+flex-wrap: wrap;
 border-left: 4px solid black;
 flex-direction: column;
 align-items: center;
 justify-content: flex-start;
-width: 20%;
+width: 30%;
 height: 100vh;
 overflow-y: auto;
 overflow-x: hidden;
@@ -129,6 +121,7 @@ overflow-x: hidden;
    color: #97d4ff;
    text-shadow: 2px 3px 5px black;
  }
+ 
  .sidebar_new-instance {
    display: flex;
    justify-content: space-around;
@@ -138,28 +131,33 @@ overflow-x: hidden;
    min-height: 10%;
 }
 
-.mini_palette {
-  display: flex;
-  justify-content: space-between;
-  flex-flow: row wrap;
-  height: 50%;
-  width: 100%;
-  border-radius: 2px;
-  }
+.palettes_color_mini {
+  white-space: nowrap;
 }
 
-.palettes_color {
-  background-color: pink;
+.mini_palettes_container {
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  width: 100%;
+}
+
+.mini {
+  cursor: default;
 }
 
 .mini_trashCan {
-  height: 40%;
-  width: 10%;
-  content: null;
+  width: 40px;
+  height: 30px;
+  margin-top: 33px;
+  cursor: pointer;
+  border: none;
+  white-space: nowrap;
+  cursor: pointer;
 }
-.mini_trashCan:hover {
-content:null;
-cursor: pointer;
+
+.saved-palette-container {
+  display: flex;
 }
 
 .hidden {
