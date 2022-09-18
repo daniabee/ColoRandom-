@@ -13,7 +13,7 @@ class Palette {
     for (var i = 0; i < currentPalette.length; i++) {
       var newColor = new Color ();
       if (currentPalette[i].classList.contains('unlocked')) {
-        currentPalette[i].style.backgroundColor = `#${newColor.hex}`
+        currentPalette[i].style.backgroundColor = `${newColor.hex}`
       }
       else if (currentPalette[i].classList.contains('locked')) {
         newColor.hex = currentPalette[i].style.backgroundColor;
@@ -21,7 +21,7 @@ class Palette {
       this.colors.push(newColor);
     }
     for (var i = 0; i < hexCode.length; i++) {
-      hexCode[i].innerText = `#${this.colors[i].hex}`;
+      hexCode[i].innerText = `${this.colors[i].hex}`;
     }
   }
 
