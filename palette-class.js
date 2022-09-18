@@ -1,6 +1,3 @@
-var currentPalette = document.querySelectorAll('.palettes_current');
-var hexCode = document.querySelectorAll('.hex-code');
-
 class Palette {
   constructor(array) {
     this.colors = array || [];
