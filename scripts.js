@@ -52,15 +52,12 @@ function savePalette() {
 }
 
 function displayPalette() {
-  // create a function seperating data model from dom below
   miniSavedPalettes.innerHTML = '';
 
   for (var i = 0; i < savedPalettes.length; i++){
     var pallet = '';
     for (var j = 0; j < savedPalettes[i].colors.length; j++) {
-
       savedPalettes[i].lockColor(j);
-
       pallet +=  `
         <section class="palettes_color_mini" data-index="0">
           <section class="palettes_current mini locked" style="background-color:#${savedPalettes[i].colors[j].hex}";></section>
@@ -77,27 +74,10 @@ function displayPalette() {
 
 };
 
-
-  //add a value/key to trash can img
-  // being created as part of original for loop 47
-  // savepalet.i.// ID
-  // put eventlisterner on big container
-  // target (function )( function (event))
-  //function will hit if( event.target.value.classList.
-  // does even.t.target.key === date.object // instanceof// update data model (remove from array )// maybe splice method...
-  // function renders// the dom with a function
-  //does event.target.contains(mini_trashCan
-  // queryselector (console.log() frequently)
-
-
-
-
 function makeLocked(elementLock) {
   elementLock.classList.remove('unlocked');
   elementLock.classList.add('locked');
 }
-
-
 
 function lockColor1() {
   if (!mainPalette.colors[0].locked) {
@@ -152,16 +132,18 @@ function lockColor5() {
 function makeHidden(elementHidden) {
   elementHidden.classList.add('hidden');
 }
+
 function makeVisible(elementVisible) {
   elementVisible.classList.remove('hidden');
 }
+
 function makeLocked(elementLock) {
   elementLock.classList.remove('unlocked');
   elementLock.classList.add('locked');
 }
 
 function removeColorRow(event) {
-   console.log(event)
+   console.log(event);
    if(event.target.classList.contains('mini_trashCan')) {
      for(var i = 0; i < savedPalettes.length; i++) {
        if(savedPalettes[i].id === Number(event.target.id)) {

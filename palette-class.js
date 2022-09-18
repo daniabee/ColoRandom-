@@ -14,8 +14,7 @@ class Palette {
       var newColor = new Color ();
       if (currentPalette[i].classList.contains('unlocked')) {
         currentPalette[i].style.backgroundColor = `#${newColor.hex}`
-      }
-      else if (currentPalette[i].classList.contains('locked')) {
+      } else if (currentPalette[i].classList.contains('locked')) {
         newColor.hex = currentPalette[i].style.backgroundColor;
       }
       this.colors.push(newColor);
