@@ -60,7 +60,7 @@ function displayPalette() {
       savedPalettes[i].lockColor(j);
       pallet +=  `
         <section class="palettes_color_mini" data-index="0">
-          <section class="palettes_current mini locked" style="background-color:#${savedPalettes[i].colors[j].hex}";></section>
+          <section class="palettes_current mini locked" style="background-color:${savedPalettes[i].colors[j].hex}";></section>
         </section>
       `
     }
@@ -73,6 +73,7 @@ function displayPalette() {
   }
 
 };
+
 
 function makeLocked(elementLock) {
   elementLock.classList.remove('unlocked');

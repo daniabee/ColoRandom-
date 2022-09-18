@@ -6,7 +6,7 @@ function getRandomIndex(array) {
 
 class Color {
   constructor() {
-    this.hex = this.getNewHex();
+    this.hex = `#${this.getNewHex()}`;
     this.locked = false;
   }
 
