@@ -72,6 +72,11 @@ text-shadow: 0px 11px 8px black;
 
 }
 
+.closed-lock {
+  width: 40px;
+  height: 25px;
+}
+
 .sidebar {
 display: flex;
 flex-wrap: wrap;
@@ -148,7 +153,6 @@ overflow-y: auto;
 .mini_trashCan {
   width: 40px;
   height: 30px;
-  margin-top: 33px;
   cursor: pointer;
   border: none;
   white-space: nowrap;
