@@ -36,7 +36,7 @@ text-shadow: 0px 11px 8px black;
   height: 35%;
 }
 
-.palettes_color, .palettes_color_mini{
+.palettes-color, .palettes-color-mini{
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -46,7 +46,7 @@ text-shadow: 0px 11px 8px black;
   width: 18%;
 }
 
-.palettes_current {
+.palettes-current {
   height: 20%;
   width: 80%;
   border: 4px solid black;
@@ -55,7 +55,7 @@ text-shadow: 0px 11px 8px black;
   box-shadow: 5px 0px 0px black;
 }
 
-.palettes_hex-key {
+.palettes-hex-key {
   height: 20%;
   width: 100%;
   text-align: center;
@@ -64,7 +64,7 @@ text-shadow: 0px 11px 8px black;
   align-items: center;
 }
 
-.mini_trashCan,
+.mini-trashCan,
 .closed-lock, .open-lock {
   width: 30px;
   height: 30px;
@@ -89,7 +89,7 @@ height: 100vh;
 overflow-y: auto;
 }
 
-.sidebar_header {
+.sidebar-header {
   font-size: 24pt;
   width: 100%;
   text-align: center;
@@ -97,14 +97,14 @@ overflow-y: auto;
   text-shadow: 2px 3px 5px black;
 }
 
-.main_buttons {
+.main-buttons {
   height: 30%;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
 }
 
-.buttons_new-palette, .buttons_save-palette {
+.buttons-new-palette, .buttons-save-palette {
   width: 25%;
   height: 32%;
   font-size: 19pt;
@@ -113,12 +113,12 @@ overflow-y: auto;
   background-color: #eef8ff;
   }
 
-  .buttons_new-palette:hover,.buttons_save-palette:hover {
+  .buttons-new-palette:hover,.buttons-save-palette:hover {
     box-shadow: 5px 5px 5px black;
     cursor: pointer;
   }
 
- .sidebar_header {
+ .sidebar-header {
    font-size: 25pt;
    width: 100%;
    text-align: center;
@@ -126,20 +126,11 @@ overflow-y: auto;
    text-shadow: 0px 7px 14px black;
  }
 
- .sidebar_new-instance {
-   display: flex;
-   justify-content: space-around;
-   align-items: center;
-   width: 90%;
-   height: 10;
-   min-height: 10%;
-}
-
-.palettes_color_mini {
+.palettes-color-mini {
   white-space: nowrap;
 }
 
-.mini_palettes_container {
+.mini-palettes-container {
   display: flex;
   flex-direction: column;
   height: 100px;
@@ -150,7 +141,7 @@ overflow-y: auto;
   cursor: default;
 }
 
-.mini_trashCan {
+.mini-trashCan {
   width: 40px;
   height: 30px;
   cursor: pointer;
