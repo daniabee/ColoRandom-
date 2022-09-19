@@ -1,13 +1,12 @@
 // QuerySelectors
-var newPaletteButton = document.querySelector('.buttons_new-palette')
-var saveButton = document.querySelector('.buttons_save-palette');
-var miniSavedPalettes = document.querySelector('.mini_palettes_container');
+var newPaletteButton = document.querySelector('.buttons-new-palette')
+var saveButton = document.querySelector('.buttons-save-palette');
+var miniSavedPalettes = document.querySelector('.mini-palettes-container');
 var currentPaletteMini = document.querySelector('.mini');
-var colorBlocks = document.querySelectorAll('.palettes_current');
+var colorBlocks = document.querySelectorAll('.palettes-current');
 var openLocks = document.querySelectorAll('.open-lock');
 var closedLocks = document.querySelectorAll('.closed-lock');
-var miniPalettesArea = document.querySelector('.mini_palettes_container');
-var currentPalette = document.querySelectorAll('.palettes_current');
+var currentPalette = document.querySelectorAll('.palettes-current');
 var hexCode = document.querySelectorAll('.hex-code');
 
 // global variables
@@ -38,7 +37,7 @@ secondColor.addEventListener('click', lockColor2);
 thirdColor.addEventListener('click', lockColor3);
 fourthColor.addEventListener('click', lockColor4);
 fifthColor.addEventListener('click', lockColor5);
-miniPalettesArea.addEventListener('click',removeColorRow);
+miniSavedPalettes.addEventListener('click',removeColorRow);
 
 // functions below
 function generateNewPalette() {
@@ -60,15 +59,15 @@ function displayPalette() {
     for (var j = 0; j < savedPalettes[i].colors.length; j++) {
       savedPalettes[i].lockColor(j);
       pallet +=  `
-        <section class="palettes_color_mini" data-index="0">
-          <section class="palettes_current mini locked" style="background-color:${savedPalettes[i].colors[j].hex}";></section>
+        <section class="palettes-color-mini" data-index="0">
+          <section class="palettes-current mini locked" style="background-color:${savedPalettes[i].colors[j].hex}";></section>
         </section>
       `
     }
     miniSavedPalettes.innerHTML += `
       <section class="saved-palette-container">
         ${pallet}
-        <img class= "mini_trashCan" src="./imgFolder/trash-can.png" alt="trash can icon" id="${savedPalettes[i].id}">
+        <img class= "mini-trashCan" src="./imgFolder/trash-can.png" alt="trash can icon" id="${savedPalettes[i].id}">
       </section>
     `
   }
@@ -176,8 +175,7 @@ function makeLocked(elementLock) {
 }
 
 function removeColorRow(event) {
-   console.log(event);
-   if(event.target.classList.contains('mini_trashCan')) {
+   if(event.target.classList.contains('mini-trashCan')) {
      for(var i = 0; i < savedPalettes.length; i++) {
        if(savedPalettes[i].id === Number(event.target.id)) {
          savedPalettes.splice([i], 1);
