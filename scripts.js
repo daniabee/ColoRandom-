@@ -6,7 +6,7 @@ var currentPaletteMini = document.querySelector('.mini');
 var colorBlocks = document.querySelectorAll('.palettes_current');
 var openLocks = document.querySelectorAll('.open-lock');
 var closedLocks = document.querySelectorAll('.closed-lock');
-var miniPalettesArea = document.querySelector('.mini_palettes_container')
+var miniPalettesArea = document.querySelector('.mini_palettes_container');
 var currentPalette = document.querySelectorAll('.palettes_current');
 var hexCode = document.querySelectorAll('.hex-code');
 
@@ -38,18 +38,16 @@ secondColor.addEventListener('click', lockColor2);
 thirdColor.addEventListener('click', lockColor3);
 fourthColor.addEventListener('click', lockColor4);
 fifthColor.addEventListener('click', lockColor5);
-miniPalettesArea.addEventListener('click',removeColorRow)
-
+miniPalettesArea.addEventListener('click',removeColorRow);
 
 // functions below
 function generateNewPalette() {
-  mainPalette.replaceColor()
+  mainPalette.replaceColor();
 }
 
 function savePalette() {
   var saveThisPalette = new Palette(mainPalette.colors);
   savedPalettes.push(saveThisPalette);
-
   displayPalette();
   generateNewPalette();
 }
@@ -74,9 +72,7 @@ function displayPalette() {
       </section>
     `
   }
-
 };
-
 
 function makeLocked(elementLock) {
   elementLock.classList.remove('unlocked');
@@ -86,9 +82,7 @@ function makeLocked(elementLock) {
 
 function makeUnlocked(elementLock) {
   elementLock.classList.add('unlocked');
-  elementLock.classList.remove('locked')
-
-
+  elementLock.classList.remove('locked');
 }
 
 function lockColor1() {
@@ -96,32 +90,28 @@ function lockColor1() {
     makeHidden(firstLock);
     makeVisible(firstClosedLock);
     makeLocked(firstColor);
-    mainPalette.lockColor(0)
+    mainPalette.lockColor(0);
   } else if
     (mainPalette.colors[0].locked) {
       makeVisible(firstLock);
       makeHidden(firstClosedLock);
       makeUnlocked(firstColor);
-      mainPalette.unlockColor(0)
+      mainPalette.unlockColor(0);
     }
-  }
-  // else if (firstColor.classList.contains('locked')) {
-  //
-  // }
-
+}
 
 function lockColor2() {
   if (!mainPalette.colors[1].locked) {
     makeHidden(secondLock);
     makeVisible(secondClosedLock);
     makeLocked(secondColor);
-    mainPalette.lockColor(1)
+    mainPalette.lockColor(1);
   } else if
     (mainPalette.colors[1].locked) {
       makeVisible(secondLock);
       makeHidden(secondClosedLock);
       makeUnlocked(secondColor);
-      mainPalette.unlockColor(1)
+      mainPalette.unlockColor(1);
     }
 }
 
@@ -130,13 +120,13 @@ function lockColor3() {
     makeHidden(thirdLock);
     makeVisible(thirdClosedLock);
     makeLocked(thirdColor);
-    mainPalette.lockColor(2)
+    mainPalette.lockColor(2);
   } else if
     (mainPalette.colors[2].locked) {
       makeVisible(thirdLock);
       makeHidden(thirdClosedLock);
       makeUnlocked(thirdColor);
-      mainPalette.unlockColor(2)
+      mainPalette.unlockColor(2);
     }
 }
 
@@ -145,14 +135,13 @@ function lockColor4() {
     makeHidden(fourthLock);
     makeVisible(fourthClosedLock);
     makeLocked(fourthColor);
-    mainPalette.lockColor(3)
-  }
-  else if
+    mainPalette.lockColor(3);
+  } else if
     (mainPalette.colors[3].locked) {
       makeVisible(fourthLock);
       makeHidden(fourthClosedLock);
       makeUnlocked(fourthColor);
-      mainPalette.unlockColor(3)
+      mainPalette.unlockColor(3);
     }
 }
 
@@ -167,7 +156,7 @@ function lockColor5() {
       makeVisible(fifthLock);
       makeHidden(fifthClosedLock);
       makeUnlocked(fifthColor);
-      mainPalette.unlockColor(4)
+      mainPalette.unlockColor(4);
     }
 }
 
@@ -185,7 +174,6 @@ function makeLocked(elementLock) {
   elementLock.classList.remove('unlocked');
   elementLock.classList.add('locked');
 }
-
 
 function removeColorRow(event) {
    console.log(event);
