@@ -74,17 +74,6 @@ function displayPalette() {
   }
 };
 
-function makeLocked(elementLock) {
-  elementLock.classList.remove('unlocked');
-  elementLock.classList.add('locked');
-}
-// There is the same function on line 152*
-
-function makeUnlocked(elementLock) {
-  elementLock.classList.add('unlocked');
-  elementLock.classList.remove('locked');
-}
-
 function lockColor1() {
   if (!mainPalette.colors[0].locked) {
     makeHidden(firstLock);
@@ -173,6 +162,11 @@ function makeVisible(elementVisible) {
 function makeLocked(elementLock) {
   elementLock.classList.remove('unlocked');
   elementLock.classList.add('locked');
+}
+
+function makeUnlocked(elementLock) {
+  elementLock.classList.add('unlocked');
+  elementLock.classList.remove('locked');
 }
 
 function removeColorRow(event) {
