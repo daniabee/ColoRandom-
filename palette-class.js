@@ -1,22 +1,20 @@
 class Palette {
-  constructor(array) {
-    this.colors = array || [];
+  constructor(colorPalette) {
+    this.colors = colorPalette || [];
     this.id = Date.now();
-
   }
 
   replaceColor() {
-    this.colors= [];
-    for (var i = 0; i < currentPalette.length; i++) {
-      var newColor = new Color ();
-      if (currentPalette[i].classList.contains('unlocked')) {
-        currentPalette[i].style.backgroundColor = `${newColor.hex}`
-      }
-      else if (currentPalette[i].classList.contains('locked')) {
-        newColor.hex = currentPalette[i].style.backgroundColor;
+    this.colors = [];
+    currentPalette.forEach((colorBlock) => {
+      var newColor = new Color();
+      if (colorBlock.classList.contains("unlocked")) {
+        colorBlock.style.backgroundColor = `${newColor.hex}`;
+      } else if (colorBlock.classList.contains("locked")) {
+        newColor.hex = colorBlock.style.backgroundColor;
       }
       this.colors.push(newColor);
-    }
+    });
     for (var i = 0; i < hexCode.length; i++) {
       hexCode[i].innerText = `${this.colors[i].hex}`;
     }
