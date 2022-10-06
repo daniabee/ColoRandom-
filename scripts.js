@@ -36,23 +36,23 @@ function savePalette() {
 function displayPalette() {
   miniSavedPalettes.innerHTML = "";
 
-  for (var i = 0; i < savedPalettes.length; i++) {
+  savedPalettes.forEach((paletteColor) => {
     var pallet = "";
-    for (var j = 0; j < savedPalettes[i].colors.length; j++) {
-      savedPalettes[i].lockColor(j);
+    for (var i = 0; i < paletteColor.colors.length; i++) {
+      paletteColor.lockColor(i);
       pallet += `
         <section class="palettes-color-mini" data-index="0">
-          <section class="palettes-current mini locked" style="background-color:${savedPalettes[i].colors[j].hex}";></section>
+          <section class="palettes-current mini locked" style="background-color:${paletteColor.colors[i].hex}";></section>
         </section>
       `;
     }
     miniSavedPalettes.innerHTML += `
       <section class="saved-palette-container">
         ${pallet}
-        <img class= "mini-trashCan" src="./imgFolder/trash-can.png" alt="trash can icon" id="${savedPalettes[i].id}">
+        <img class= "mini-trashCan" src="./imgFolder/trash-can.png" alt="trash can icon" id="${paletteColor.id}">
       </section>
     `;
-  }
+  });
 }
 
 function lockColor(event) {
